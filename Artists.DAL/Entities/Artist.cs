@@ -11,7 +11,6 @@ namespace Artists.DAL.Entities
         public string City { get; set; }
         public string Site { get; set; }
         public DateTime BirthDate { get; set; }
-
-        public virtual IList<ArtistDetail> Details { get; set; }
+        public virtual IList<ArtistDetail> ArtistDetails { get; set; }
     }
 }
