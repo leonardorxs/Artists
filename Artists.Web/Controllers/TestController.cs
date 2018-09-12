@@ -39,6 +39,7 @@ namespace Artists.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Id,Name,Country,City,Site,BirthDate")] Artist artist)
         {
             if (!ModelState.IsValid)
@@ -63,6 +64,7 @@ namespace Artists.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("Id,Name,Country,City,Site,BirthDate")] Artist artist)
         {
             if (id != artist.Id)
@@ -97,6 +99,7 @@ namespace Artists.Web.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int? id)
         {
             var artist = _unitOfWork.Artists.Get(id);
